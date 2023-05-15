@@ -1,17 +1,14 @@
 let homeTable = document.getElementById("home-table");
 let homeTBody = document.getElementById("home-tbody");
 let courseTBody = document.getElementById("course-body");
-//fetch students api
-window.addEventListener("DOMContentLoaded", () => {
-       fetchCourses();
-       fetchAllStudents();
-         
-});
+ 
+   fetchCourses();
+   fetchAllStudents();
 
 function fetchCourses() {
      fetch("https://localhost:7173/api/v1/studentInfoSys/courses")
        .then((response) => response.json())
-       .then((data) => {
+       .then((data) => { 
          for (let i = 0; i < data.length; i++) {
            let tr = document.createElement("tr");
            tr.innerHTML = `<th>${data[i].id}</th>
